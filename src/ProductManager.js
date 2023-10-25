@@ -91,7 +91,6 @@ class ProductManager {
   }
 }
 
-// export default ProductManager;
 module.exports = ProductManager;
 
 // const pm = new ProductManager();
