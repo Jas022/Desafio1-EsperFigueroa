@@ -1,10 +1,13 @@
 import express from "express";
-import { ProductManager } from "./src/productManager.js";
+import ProductManager from "./ProductManager.js";
 
 const app = express();
 const productManager = new ProductManager("./data/products.json");
 
-app.get("./products", async (req, res) => {
+app.get("/", (req, res) => {
+  res.send("Bienvenidos a ArtesaniasSTe");
+});
+app.get("/products", async (req, res) => {
   const result = await productManager.getProducts();
   const limit = req.query.limit;
   if (typeof result == "string") {
@@ -16,9 +19,9 @@ app.get("./products", async (req, res) => {
   res.status(200).json({ payload: result.slice(0, limit) });
 });
 
-app.get("./products(:id", async (req, res) => {
+app.get("/products/:id", async (req, res) => {
   const id = parseInt(req.params.id);
-  const result = await productManager.getProductsById(id);
+  const result = await productManager.getProductById(id);
   const limit = req.query.limit;
   if (typeof result == "string") {
     const error = result.split("");

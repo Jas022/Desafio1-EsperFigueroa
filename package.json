@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "commonjs",
+  "main": "src/app.js",
+  "type": "module",
   "scripts": {
     "dev": "node --watch ."
   },

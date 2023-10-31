@@ -1,5 +1,5 @@
 // import ProductManager from "./productManager.js";
-const ProductManager = require("./src/ProductManager");
+import ProductManager from "./src/ProductManager.js";
 
 const mockProduct = {
   title: "Producto prueba",
